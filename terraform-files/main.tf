@@ -18,6 +18,10 @@ terraform {
       source  = "hashicorp/helm"
       version = ">= 2.12"
     }
+    docker = {
+      source  = "kreuzwerker/docker"
+      version = "2.16.0"
+    }
   }
 }
 
@@ -152,4 +156,27 @@ resource "helm_release" "tofu_controller" {
     value = "false"
   }
 
+}
+
+// secret for docker 
+resource "kubernetes_secret_v1" "example" {
+  metadata {
+    name = "ocicred"
+    namespace = "flux-system"
+  }
+
+  type = "kubernetes.io/dockerconfigjson"
+
+  data = {
+    ".dockerconfigjson" = jsonencode({
+      auths = {
+        "${var.registry_server}" = {
+          "username" = var.registry_username
+          "password" = var.registry_password
+          "email"    = var.registry_email
+          "auth"     = base64encode("${var.registry_username}:${var.registry_password}")
+        }
+      }
+    })
+  }
 }

@@ -70,3 +70,40 @@ variable "flux_registry" {
   type        = string
   default     = "ghcr.io/fluxcd"
 }
+
+variable "docker_username" {
+  description = "The ghcr.io docker username"
+  type        = string
+  default     = "alokhom"
+}
+
+variable "docker_password" {
+  description = "The ghcr.io dockerpass"
+  type        = string
+  sensitive   = true
+}
+
+variable "registry_username" {
+  description = "The ghcr.io docker username"
+  type        = string
+  default     = "alokhom"
+}
+
+variable "registry_password" {
+  description = "The ghcr.io docker username"
+  type        = string
+  default     = "alokhom"
+  sensitive   = true
+}
+
+variable "registry_email" {
+  description = "The ghcr.io docker username"
+  type        = string
+  default     = "alok.hom@gmail.com"
+}
+
+variable "registry_server" {
+  description = "The ghcr.io"
+  type        = string
+  default     = "ghcr.io"
+}

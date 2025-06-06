@@ -46,3 +46,20 @@ spec:
   sourceRef:
     kind: OCIRepository
     name: infra-source
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: infra-crds
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: infra-controllers
+  interval: 1h
+  retryInterval: 1m
+  timeout: 5m
+  path: ./crds
+  prune: true
+  sourceRef:
+    kind: OCIRepository
+    name: infra-source
