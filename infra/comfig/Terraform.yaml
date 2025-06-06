@@ -1,0 +1,24 @@
+apiVersion: infra.contrib.fluxcd.io/v1alpha2
+kind: Terraform
+metadata:
+  name: pe-demo
+  namespace: tofu
+spec:
+  interval: 1m
+  approvePlan: auto
+  path: ./terraform-files
+  sourceRef:
+    kind: GitRepository
+    name: tofu
+    namespace: tofu
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: tofu
+  namespace: tofu
+spec:
+  interval: 30s
+  url: https://github.com/alokhom/pe-demo
+  ref:
+    branch: main

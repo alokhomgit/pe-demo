@@ -7,7 +7,7 @@ set -o errexit
 
 kubernetes_path='..'
 cluster_name='dev'
-registry='ghcr.io/alokhom/oci-repo'
+registry='ghcr.io/alokhom/pe-demo'
 
 diff_push() {
   artifact_name=$1
