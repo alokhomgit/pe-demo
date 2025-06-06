@@ -40,7 +40,7 @@ resources:
     cpu: 1000m
     memory: 1Gi
   requests:
-    cpu: 200m
+    cpu: 400m
     memory: 64Mi
 # -- Additional container environment variables.
 extraEnv: {}
