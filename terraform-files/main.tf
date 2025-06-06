@@ -139,7 +139,7 @@ resource "helm_release" "tofu_controller" {
   depends_on = [kubernetes_namespace.tofu]
 
   name       = "tofu-controller"
-  namespace  = "tofu"
+  namespace  = "flux-system"
   repository = "https://flux-iac.github.io/tofu-controller"
   chart      = "tofu-controller"
   version    = "0.16.0-rc.5"

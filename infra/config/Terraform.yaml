@@ -2,7 +2,7 @@ apiVersion: infra.contrib.fluxcd.io/v1alpha2
 kind: Terraform
 metadata:
   name: pe-demo
-  namespace: tofu
+  namespace: flux-system
 spec:
   interval: 1m
   approvePlan: auto
@@ -16,7 +16,7 @@ apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
   name: tofu
-  namespace: tofu
+  namespace: flux-system
 spec:
   interval: 30s
   url: https://github.com/alokhom/pe-demo
