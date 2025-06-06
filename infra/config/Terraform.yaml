@@ -10,7 +10,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: tofu
-    namespace: tofu
+    namespace: flux-system
 ---
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
