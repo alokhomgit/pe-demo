@@ -123,20 +123,8 @@ resource "helm_release" "flux_instance" {
 }
 
 
-// Create the tofu namespace.
-resource "kubernetes_namespace" "tofu" {
-  metadata {
-    name = "tofu"
-  }
-
-  lifecycle {
-    ignore_changes = [metadata]
-  }
-}
-
 // Install the opentofu Operator.
 resource "helm_release" "tofu_controller" {
-  depends_on = [kubernetes_namespace.tofu]
 
   name       = "tofu-controller"
   namespace  = "flux-system"
@@ -150,11 +138,6 @@ resource "helm_release" "tofu_controller" {
     file("values/opentofu.yaml")
   ]
 
-  // Configure.
-  set {
-    name  = "instance.watchAllNamespaces"
-    value = "false"
-  }
 
 }
 
