@@ -39,4 +39,4 @@ spec:
   sourceRef:
     kind: GitRepository
     name: pe-demo
-    namespace: flux-system
+    namespace: opentofu
