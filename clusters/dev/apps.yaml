@@ -21,7 +21,7 @@ metadata:
   namespace: flux-system
 spec:
   dependsOn:
-    - name: infra-config
+    - name: infra-instances
   interval: 1h
   retryInterval: 30s
   timeout: 5m
