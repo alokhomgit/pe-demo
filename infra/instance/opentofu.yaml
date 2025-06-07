@@ -31,7 +31,7 @@ apiVersion: infra.contrib.fluxcd.io/v1alpha2
 kind: Terraform
 metadata:
   name: pe-demo
-  namespace: flux-system
+  namespace: opentofu
 spec:
   interval: 1m
   approvePlan: auto
