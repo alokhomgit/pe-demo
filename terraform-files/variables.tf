@@ -7,7 +7,8 @@ variable "region_zone" {
 }
 
 variable "project_name" {
-  description = "alokproject"
+  description = "project name"
+  default = "alokproject"
 }
 
 variable "credentials_file_path" {
