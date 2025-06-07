@@ -184,11 +184,11 @@ spec:
     # Metrics
     metrics:
       # -- Enable Metrics Service
-      enabled: true
+      enabled: false
       # ServiceMonitor
       serviceMonitor:
         # -- Enable ServiceMonitor
-        enabled: true
+        enabled: false
         # -- Install the ServiceMonitor into a different Namespace, as the monitoring stack one
         # @default -- `.Release.Namespace`
         namespace: ''
