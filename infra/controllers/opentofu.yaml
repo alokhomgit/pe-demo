@@ -156,7 +156,7 @@ spec:
         repository: ghcr.io/flux-iac/tf-runner
         # -- Runner image tag
         # @default -- `.Chart.AppVersion`
-        tag: "v0.16.0-rc.3"
+        tag: "v0.16.0-rc.5"
       grpc:
         # -- Maximum GRPC message size (Controller)
         maxMessageSize: 4
