@@ -1,24 +1,24 @@
-apiVersion: source.toolkit.fluxcd.io/v1
-kind: GitRepository
-metadata:
-  name: pe-demo
-  namespace: flux-system
-spec:
-  interval: 30s
-  url: https://github.com/alokhom/pe-demo
-  ref:
-    branch: main
----
-apiVersion: infra.contrib.fluxcd.io/v1alpha2
-kind: Terraform
-metadata:
-  name: pe-demo
-  namespace: flux-system
-spec:
-  interval: 1m
-  approvePlan: auto
-  path: ./terraform-files
-  sourceRef:
-    kind: GitRepository
-    name: pe-demo
-    namespace: flux-system
+# apiVersion: source.toolkit.fluxcd.io/v1
+# kind: GitRepository
+# metadata:
+#   name: pe-demo
+#   namespace: flux-system
+# spec:
+#   interval: 30s
+#   url: https://github.com/alokhom/pe-demo
+#   ref:
+#     branch: main
+# ---
+# apiVersion: infra.contrib.fluxcd.io/v1alpha2
+# kind: Terraform
+# metadata:
+#   name: pe-demo
+#   namespace: flux-system
+# spec:
+#   interval: 1m
+#   approvePlan: auto
+#   path: ./terraform-files
+#   sourceRef:
+#     kind: GitRepository
+#     name: pe-demo
+#     namespace: flux-system
