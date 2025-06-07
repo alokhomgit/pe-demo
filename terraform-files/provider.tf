@@ -1,10 +1,15 @@
+resource "local_file" "my_file" {
+  content  = yamlencode(var.kubernetes_config)
+  filename = "kubernetes_config.yaml"
+}
+
 provider "kubernetes" {
-  config_path = var.kubernetes_config
+  config_path = "kubernetes_config.yaml"
 }
 
 provider "helm" {
   kubernetes {
-    config_path = var.kubernetes_config
+    config_path = "kubernetes_config.yaml"
   }
 }
 
