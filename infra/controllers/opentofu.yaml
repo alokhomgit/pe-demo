@@ -23,12 +23,6 @@ spec:
         kind: HelmRepository
         name: opentofu
       interval: 12h
-  releaseName: tf-controller
-  targetNamespace: flux-system
-  install:
-    crds: Create
-  upgrade:
-    crds: CreateReplace
   values:
     # -- If `true`, enable cross-namespace references for controller and branch-planner
     allowCrossNamespaceRefs: false
