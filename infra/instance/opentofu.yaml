@@ -20,7 +20,7 @@ apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
   name: pe-demo
-  namespace: flux-system
+  namespace: opentofu
 spec:
   interval: 30s
   url: https://github.com/alokhom/pe-demo
