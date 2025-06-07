@@ -22,14 +22,12 @@ spec:
   interval: 30m
   chart:
     spec:
-      chart: tf-controller
+      chart: tofu-controller
       version: ">=0.16.0-rc.3"
       sourceRef:
         kind: HelmRepository
         name: opentofu
       interval: 12h
-  releaseName: tf-controller
-  targetNamespace: flux-system
   install:
     crds: Create
   upgrade:

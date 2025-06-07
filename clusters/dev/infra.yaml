@@ -17,9 +17,27 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
+  name: infra-crds
+  namespace: flux-system
+spec:
+  interval: 1h
+  retryInterval: 1m
+  timeout: 5m
+  path: ./crds
+  prune: true
+  wait: true
+  sourceRef:
+    kind: OCIRepository
+    name: infra-source
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
   name: infra-controllers
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: infra-crds
   interval: 1h
   retryInterval: 1m
   timeout: 5m
@@ -33,7 +51,7 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: infra-config
+  name: infra-instances
   namespace: flux-system
 spec:
   dependsOn:
@@ -41,7 +59,7 @@ spec:
   interval: 1h
   retryInterval: 1m
   timeout: 5m
-  path: ./config
+  path: ./instance
   prune: true
   sourceRef:
     kind: OCIRepository
