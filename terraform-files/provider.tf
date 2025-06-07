@@ -1,10 +1,10 @@
 provider "kubernetes" {
-  config_path = jsondecode(file(var.credentials_file))
+  config_path = file(var.credentials_file)
 }
 
 provider "helm" {
   kubernetes {
-    config_path = jsondecode(file(var.credentials_file))
+    config_path = file(var.credentials_file)
   }
 }
 
