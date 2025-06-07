@@ -107,3 +107,10 @@ variable "registry_server" {
   type        = string
   default     = "ghcr.io"
 }
+
+
+variable "kubernetes_config" {
+  description = "k8s config"
+  type        = string
+  default     = ""
+}

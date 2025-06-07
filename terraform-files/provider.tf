@@ -1,10 +1,10 @@
 provider "kubernetes" {
-  config_path = var.KUBERNETES_CONFIG
+  config_path = var.kubernetes_config
 }
 
 provider "helm" {
   kubernetes {
-    config_path = var.KUBERNETES_CONFIG
+    config_path = var.kubernetes_config
   }
 }
 
