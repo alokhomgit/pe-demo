@@ -1,5 +1,5 @@
 locals {
-    kube_config = yamldecode(file("~/.kube/gke_config"))
+    kube_config = yamldecode(file("/tmp/gke_config"))
 }
 
 provider "kubernetes" {
