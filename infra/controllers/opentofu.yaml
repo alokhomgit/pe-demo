@@ -21,7 +21,7 @@ spec:
       version: ">=0.16.0-rc.3"
       sourceRef:
         kind: HelmRepository
-        name: flux-system
+        name: opentofu
       interval: 12h
   releaseName: tf-controller
   targetNamespace: flux-system
