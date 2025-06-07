@@ -107,7 +107,3 @@ variable "registry_server" {
   type        = string
   default     = "ghcr.io"
 }
-
-variable "tfc_token" {
-  type = string
-}
