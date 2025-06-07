@@ -144,7 +144,7 @@ spec:
     clusterDomain: cluster.local
     # -- Argument for `--use-pod-subdomain-resolution` (Controller).
     #  UsePodSubdomainResolution allow pod hostname/subdomain DNS resolution for the pod runner instead of IP based DNS resolution.
-    usePodSubdomainResolution: true
+    usePodSubdomainResolution: false
     awsPackage:
       install: true
       tag: v4.38.0-v1alpha11
