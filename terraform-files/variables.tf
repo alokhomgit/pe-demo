@@ -81,6 +81,7 @@ variable "docker_username" {
 variable "docker_password" {
   description = "The ghcr.io dockerpass"
   type        = string
+  default     = "alokhom"
   sensitive   = true
 }
 
@@ -91,7 +92,7 @@ variable "registry_username" {
 }
 
 variable "registry_password" {
-  description = "The ghcr.io docker username"
+  description = "The ghcr.io docker password"
   type        = string
   default     = "alokhom"
   sensitive   = true
