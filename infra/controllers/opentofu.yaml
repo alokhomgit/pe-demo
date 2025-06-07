@@ -249,23 +249,23 @@ spec:
         requests:
           cpu: 200m
           memory: 64Mi
----
-kind: NetworkPolicy
-apiVersion: networking.k8s.io/v1
-metadata:
-  name: port-allow-30000
-  namespace: opentofu
-spec:
-  podSelector: {}
-  ingress:
-  - ports:
-    - port: 30000
-  - from:
-    - namespaceSelector:
-        matchExpressions:
-        - key: namespace
-          operator: In
-          values: ["flux-system"]
+# ---
+# kind: NetworkPolicy
+# apiVersion: networking.k8s.io/v1
+# metadata:
+#   name: port-allow-30000
+#   namespace: opentofu
+# spec:
+#   podSelector: {}
+#   ingress:
+#   - ports:
+#     - port: 30000
+#   - from:
+#     - namespaceSelector:
+#         matchExpressions:
+#         - key: namespace
+#           operator: In
+#           values: ["flux-system"]
 # ---
 # apiVersion: source.toolkit.fluxcd.io/v1
 # kind: GitRepository
