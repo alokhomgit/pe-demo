@@ -1,24 +1,10 @@
-locals {
-    kube_config = yamldecode(file("/tmp/gke_config"))
-}
-
 provider "kubernetes" {
-    load_config_file = false
-
-    host = local.kube_config.clusters[1].cluster.server
-    cluster_ca_certificate = base64decode(local.kube_config.clusters[1].cluster.certificate-authority-data)
-    client_certificate = base64decode(local.kube_config.users[1].user.client-certificate-data)
-    client_key = base64decode(local.kube_config.users[1].user.client-key-data)
+    config_path = "/tmp/gke_config"
 }
 
 provider "helm" {
   kubernetes {
-    load_config_file = false
-
-    host = local.kube_config.clusters[1].cluster.server
-    cluster_ca_certificate = base64decode(local.kube_config.clusters[1].cluster.certificate-authority-data)
-    client_certificate = base64decode(local.kube_config.users[1].user.client-certificate-data)
-    client_key = base64decode(local.kube_config.users[1].user.client-key-data)
+    config_path = "/tmp/gke_config"
   }
 }
 
