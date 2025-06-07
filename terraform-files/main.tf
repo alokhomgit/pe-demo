@@ -1,4 +1,3 @@
-
 provider "google" {
   region      = var.region
   project     = var.project_name
@@ -122,24 +121,6 @@ resource "helm_release" "flux_instance" {
   }
 }
 
-
-// Install the opentofu Operator.
-resource "helm_release" "tofu_controller" {
-
-  name       = "tofu-controller"
-  namespace  = "flux-system"
-  repository = "https://flux-iac.github.io/tofu-controller"
-  chart      = "tofu-controller"
-  version    = "0.16.0-rc.5"
-  wait       = true
-
-  // Configure the Flux components and kustomize patches.
-  values = [
-    file("values/opentofu.yaml")
-  ]
-
-
-}
 
 // secret for docker 
 resource "kubernetes_secret_v1" "example" {

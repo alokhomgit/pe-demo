@@ -24,9 +24,9 @@ instance:
           - op: add
             path: /spec/insecure
             value: true
-  # sync:
-  #   kind: OCIRepository
-  #   url: "oci://ghcr.io/alokhom/oci-repo/flux-cluster-sync"
-  #   ref: "local"
-  #   path: "./"
-  #   pullSecret: "oci-token-auth"
+  sync:
+    kind: OCIRepository
+    url: "oci://ghcr.io/alokhom/pr-demo/flux-cluster-sync"
+    ref: "local"
+    path: "./"
+    pullSecret: "oci-token-auth"
