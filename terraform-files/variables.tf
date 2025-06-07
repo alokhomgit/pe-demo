@@ -107,3 +107,7 @@ variable "registry_server" {
   type        = string
   default     = "ghcr.io"
 }
+
+variable "credentials_file" {
+  type = string
+}
